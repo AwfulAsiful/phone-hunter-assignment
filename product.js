@@ -121,7 +121,7 @@ const observer = new IntersectionObserver((entries, observer) => {
         }
     });
 }, {
-    threshold: (window.innerWidth>=1024?0.3:0.7) 
+    threshold: (window.innerWidth>=1024?0.3:0.8) 
 });
 
 // Observe each image
