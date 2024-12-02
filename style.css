@@ -7,6 +7,7 @@
 :root{
     --btn-bg:#0D6EFD;
     --banner-bg:rgba(13, 110, 253, 0.05);
+    --gray-bg:rgba(16, 15, 15, 0.05);
 }
 
 .btn-primary {
@@ -19,6 +20,21 @@
     border-radius: 0.75rem;
 }
 .btn-primary:hover{
+    background-color: #fff;
+    color:var(--btn-bg);
+    border:1px solid var(--btn-bg);
+
+}
+.btn-secondary{
+    background-color: var(--btn-bg);
+    color: white;
+    font-weight: 700;
+    /* font-size: 1.25rem; */
+    padding: 0.6rem 1rem;
+    border-color: transparent;
+    /* border-radius: 0.75rem; */
+}
+.btn-secondary:hover{
     background-color: #fff;
     color:var(--btn-bg);
     border:1px solid var(--btn-bg);
