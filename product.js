@@ -1,17 +1,32 @@
 const searchBar = document.getElementById('search-bar');
 const searchBtn = document.getElementById('search-btn');
 const phoneContainer = document.querySelector('.phone-container');
+const showAllBtn=document.getElementById('show-all-btn');
 
+const limit=6;
+let allPhones=[],limitedPhones=[];
+// const isShowAllBtnClicked=false;
 // console.log(searchBtn);
 
 const reset = (inputField) => inputField.value = '';
 
-const loadPhones = (searchText) => {
+const loadPhones = (searchText,isShowAllBtnClicked) => {
     fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
     .then(res => res.json())
-    .then(phones =>displayPhones(phones.data));
+    .then(phones =>{
+        allPhones=phones.data.slice(limit+1);
+        limitedPhones=phones.data.slice(0,limit);
+        displayPhones(limitedPhones);
+        // (isShowAllBtnClicked?displayPhones(allPhones):displayPhones(allPhones.slice(0,limit)));
+    });
 
 }
+
+
+// const displayLimitedPhones=(searchText)=>{
+
+// }
+
 const displayPhones=(phones)=>{
     phones.forEach((phone)=>{
         const phoneCard=document.createElement('div');
@@ -35,8 +50,20 @@ const displayPhones=(phones)=>{
 }
 
 searchBtn.addEventListener('click', () => {
+    showAllBtn.classList.remove('hidden');
     const searchText = searchBar.value;
     phoneContainer.innerHTML='';
     loadPhones(searchText);
+    
     reset(searchBar);
 })
+showAllBtn.addEventListener('click', () => {
+    // console.log("clicked");
+    
+    // const searchText = searchBar.value;
+    // phoneContainer.innerHTML='';
+    // loadPhones(searchText,true);
+    displayPhones(allPhones);
+    // reset(searchBar);
+})
+
