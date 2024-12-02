@@ -55,3 +55,33 @@
     border:1px solid var(--btn-bg);
 
 }
+/* Initial styles for banner images */
+.banner-img {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+}
+
+/* Style for each image in the banner */
+.img-1, .img-2, .img-3 {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially position the images below */
+    transition: opacity 0.7s ease, transform 0.7s ease; /* Smooth transition */
+}
+
+/* When the image becomes visible */
+.img-visible {
+    opacity: 1;
+    transform: translateY(0); /* Move the images to their normal position */
+}
+
+/* Optional: For scaling or a bounce effect when the images appear */
+.img-1, .img-2, .img-3 {
+    transition: opacity 0.7s ease, transform 0.7s ease, transform 0.5s ease-in-out;
+}
+
+.img-visible {
+    transform: translateY(0) scale(1.05); /* Add slight scale for animation */
+}

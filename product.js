@@ -105,3 +105,25 @@ showAllBtn.addEventListener('click', () => {
     }
 
 });
+
+// Select all images in the banner
+const images = document.querySelectorAll('.banner-img .img-1, .banner-img .img-2, .banner-img .img-3');
+
+// Create an intersection observer
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // When the image enters the viewport, add the 'img-visible' class for animation
+            entry.target.classList.add('img-visible');
+        } else {
+            
+            entry.target.classList.remove('img-visible');
+        }
+    });
+}, {
+    threshold: (window.innerWidth>=1024?0.3:0.7) 
+});
+
+// Observe each image
+images.forEach(image => observer.observe(image));
+
