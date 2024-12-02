@@ -40,3 +40,18 @@
     border:1px solid var(--btn-bg);
 
 }
+.btn-tertiary{
+    background-color: var(--btn-bg);
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 0.56rem 1.5rem;
+    border-color: transparent;
+    border-radius: 0.75rem;
+}
+.btn-tertiary:hover{
+    background-color: #fff;
+    color:var(--btn-bg);
+    border:1px solid var(--btn-bg);
+
+}
