@@ -75,7 +75,8 @@
                     <div class="h-4 bg-gray-200 animate-pulse rounded w-[5rem] p-4"></div>
                     <div class="h-4 bg-gray-200 animate-pulse rounded w-4/5 p-4"></div>
                 </div>
-                <div class="w-80 border rounded-lg p-[3rem] shadow-lg space-y-4 hidden md:flex flex-col items-center lg:hidden ">
+                <div
+                    class="w-80 border rounded-lg p-[3rem] shadow-lg space-y-4 hidden md:flex flex-col items-center lg:hidden ">
                     <div class="w-full h-40 bg-gray-200 animate-pulse rounded-md"></div>
                     <div class="h-6 bg-gray-200 animate-pulse rounded w-3/5 p-4"></div>
                     <div class="h-4 bg-gray-200 animate-pulse rounded w-full p-8"></div>
@@ -83,6 +84,33 @@
                     <div class="h-4 bg-gray-200 animate-pulse rounded w-4/5 p-4"></div>
                 </div>
             </div>
+
+
+            <!-- Add a placeholder for the modal -->
+            <dialog id="details_modal" class="modal  bg-black bg-opacity-50 z-50">
+                <div class="modal-box bg-white p-8 rounded-lg">
+                    <figure class="bg-[var(--banner-bg)] flex flex-col items-center py-[3rem]">
+                        <img id="modal-img" src="" alt="" class="w-[16.75rem]">
+                    </figure>
+                    <div class="modal-body mt-[2.5rem]">
+                        <h2 id="modal-name" class="text-[1.875rem] font-bold"></h2>
+                        <p class="mt-[1.5rem] mb-[1.25rem]" id="modal-description"></p>
+                        <p><span class="font-semibold">Storage:</span> <span id="modal-storage"></span></p>
+                        <p><span class="font-semibold">Display Size:</span> <span id="modal-display-size"></span></p>
+                        <p><span class="font-semibold">Chipset:</span> <span id="modal-chipset"></span></p>
+                        <p><span class="font-semibold">Memory:</span> <span id="modal-memory"></span></p>
+                        <p><span class="font-semibold">Release Date:</span> <span id="modal-release-date"></span></p>
+                        <p><span class="font-semibold">Brand:</span> <span id="modal-brand"></span></p>
+                        <p><span class="font-semibold">GPS:</span> <span id="modal-gps"></span></p>
+                    </div>
+                    <form method="dialog" class="modal-backdrop">
+                        <button class="mt-4 bg-red-500 text-white p-2 rounded">close</button>
+                    </form>
+                    <!-- <button id="close-modal" class="mt-4 bg-red-500 text-white p-2 rounded">Close</button> -->
+                </div>
+            </dialog>
+
+
             <div
                 class="phone-container grid grid-cols-1 gap-y-6 place-items-center md:grid-cols-2 gap-x-6 lg:grid-cols-3">
                 <!--  <div class="card w-96 border-4 border-green-600">
