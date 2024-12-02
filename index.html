@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -53,8 +53,39 @@
                     <button class="btn-secondary text-white" id="search-btn">Search</button>
                 </div>
             </div>
-            <div class="phone-container grid grid-cols-1 gap-y-6 place-items-center md:grid-cols-2 gap-x-6 lg:grid-cols-3">
-               <!--  <div class="card w-96 border-4 border-green-600">
+            <div class="skeleton-container hidden">
+                <div class="w-80 border rounded-lg p-[3rem] shadow-lg space-y-4 flex flex-col items-center">
+                    <div class="w-full h-40 bg-gray-200 animate-pulse rounded-md"></div>
+                    <div class="h-6 bg-gray-200 animate-pulse rounded w-3/5 p-4"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-full p-8"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-[5rem] p-4"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-4/5 p-4"></div>
+                </div>
+                <div class="w-80 border rounded-lg p-[3rem] shadow-lg space-y-4 flex flex-col items-center">
+                    <div class="w-full h-40 bg-gray-200 animate-pulse rounded-md"></div>
+                    <div class="h-6 bg-gray-200 animate-pulse rounded w-3/5 p-4"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-full p-8"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-[5rem] p-4"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-4/5 p-4"></div>
+                </div>
+                <div class="w-80 border rounded-lg p-[3rem] shadow-lg space-y-4 flex flex-col items-center">
+                    <div class="w-full h-40 bg-gray-200 animate-pulse rounded-md"></div>
+                    <div class="h-6 bg-gray-200 animate-pulse rounded w-3/5 p-4"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-full p-8"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-[5rem] p-4"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-4/5 p-4"></div>
+                </div>
+                <div class="w-80 border rounded-lg p-[3rem] shadow-lg space-y-4 hidden md:flex flex-col items-center lg:hidden ">
+                    <div class="w-full h-40 bg-gray-200 animate-pulse rounded-md"></div>
+                    <div class="h-6 bg-gray-200 animate-pulse rounded w-3/5 p-4"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-full p-8"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-[5rem] p-4"></div>
+                    <div class="h-4 bg-gray-200 animate-pulse rounded w-4/5 p-4"></div>
+                </div>
+            </div>
+            <div
+                class="phone-container grid grid-cols-1 gap-y-6 place-items-center md:grid-cols-2 gap-x-6 lg:grid-cols-3">
+                <!--  <div class="card w-96 border-4 border-green-600">
                     <figure class="bg-[var(--banner-bg)] mt-[1.5rem] mx-[1.5rem] p-[3rem]">
                         <img src="images/banner-iphone.png" alt="" class="w-[13rem]">
                     </figure>
@@ -68,8 +99,8 @@
                         </div>
                     </div>
                 </div> -->
-                
-                
+
+
             </div>
             <div class="show-all-btn flex flex-col items-center mt-[3rem]">
                 <button class="btn-primary text-white hidden" id="show-all-btn">Show all</button>

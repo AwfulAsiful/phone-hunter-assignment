@@ -2,6 +2,7 @@ const searchBar = document.getElementById('search-bar');
 const searchBtn = document.getElementById('search-btn');
 const phoneContainer = document.querySelector('.phone-container');
 const showAllBtn=document.getElementById('show-all-btn');
+const skeletonLoader=document.querySelector('.skeleton-container');
 
 const limit=6;
 let allPhones=[],limitedPhones=[];
@@ -10,12 +11,20 @@ let allPhones=[],limitedPhones=[];
 
 const reset = (inputField) => inputField.value = '';
 
-const loadPhones = (searchText,isShowAllBtnClicked) => {
+const loadPhones = (searchText) => {
+    skeletonLoader.classList.remove('hidden');
+    skeletonLoader.classList.add('grid','grid-cols-1','gap-4','place-items-center','md:grid-cols-2','lg:grid-cols-3');
+    phoneContainer.classList.add('hidden');
+
     fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
     .then(res => res.json())
     .then(phones =>{
         allPhones=phones.data.slice(limit+1);
         limitedPhones=phones.data.slice(0,limit);
+        skeletonLoader.classList.add('hidden');
+        skeletonLoader.classList.remove('grid','grid-cols-1','gap-4','place-items-center','md:grid-cols-2','lg:grid-cols-3');
+        phoneContainer.classList.remove('hidden');
+    
         displayPhones(limitedPhones);
         // (isShowAllBtnClicked?displayPhones(allPhones):displayPhones(allPhones.slice(0,limit)));
     });
