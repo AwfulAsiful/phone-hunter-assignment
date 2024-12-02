@@ -2,7 +2,7 @@ const searchBar = document.getElementById('search-bar');
 const searchBtn = document.getElementById('search-btn');
 const phoneContainer = document.querySelector('.phone-container');
 const showAllBtn = document.getElementById('show-all-btn');
-const showAllBtnContainer=document.querySelector('.show-all-btn');
+const showAllBtnContainer = document.querySelector('.show-all-btn');
 const skeletonLoader = document.querySelector('.skeleton-container');
 
 
@@ -90,10 +90,13 @@ const displayPhones = (phones) => {
 searchBtn.addEventListener('click', () => {
 
     const searchText = searchBar.value;
-    phoneContainer.innerHTML = '';
-    loadPhones(searchText);
-    showAllBtnContainer.classList = 'show-all-btn flex flex-col items-center mt-[3rem]'
-    reset(searchBar);
+    if (searchText === '') alert("Please enter the name of the phone")
+    else {
+        phoneContainer.innerHTML = '';
+        loadPhones(searchText);
+        showAllBtnContainer.classList = 'show-all-btn flex flex-col items-center mt-[3rem]'
+        reset(searchBar);
+    }
 
 });
 
@@ -116,12 +119,12 @@ const observer = new IntersectionObserver((entries, observer) => {
             // When the image enters the viewport, add the 'img-visible' class for animation
             entry.target.classList.add('img-visible');
         } else {
-            
+
             entry.target.classList.remove('img-visible');
         }
     });
 }, {
-    threshold: (window.innerWidth>=1024?0.3:0.8) 
+    threshold: (window.innerWidth >= 1024 ? 0.3 : 0.8)
 });
 
 // Observe each image
