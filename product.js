@@ -2,7 +2,9 @@ const searchBar = document.getElementById('search-bar');
 const searchBtn = document.getElementById('search-btn');
 const phoneContainer = document.querySelector('.phone-container');
 const showAllBtn = document.getElementById('show-all-btn');
+const showAllBtnContainer=document.querySelector('.show-all-btn');
 const skeletonLoader = document.querySelector('.skeleton-container');
+
 
 const limit = 6;
 let allPhones = [], limitedPhones = [];
@@ -36,7 +38,7 @@ const loadPhoneDetails = (slug) => {
         .then(details => {
             const phone = details.data;
             // const modal = document.getElementById('details-modal');
-            
+
             // Update modal content
             document.getElementById('modal-img').src = phone.image;
             document.getElementById('modal-name').textContent = phone.name;
@@ -48,8 +50,8 @@ const loadPhoneDetails = (slug) => {
             document.getElementById('modal-release-date').textContent = phone.releaseDate;
             document.getElementById('modal-brand').textContent = phone.brand;
             document.getElementById('modal-gps').textContent = phone.gps || 'Not Available';
-            
-            
+
+
         });
 }
 
@@ -86,13 +88,20 @@ const displayPhones = (phones) => {
 }
 
 searchBtn.addEventListener('click', () => {
-    showAllBtn.classList.remove('hidden');
+
     const searchText = searchBar.value;
     phoneContainer.innerHTML = '';
     loadPhones(searchText);
+    showAllBtnContainer.classList = 'show-all-btn flex flex-col items-center mt-[3rem]'
     reset(searchBar);
+
 });
 
 showAllBtn.addEventListener('click', () => {
-    displayPhones(allPhones);
+    if (allPhones.length) { displayPhones(allPhones); allPhones = []; }
+    else {
+        alert("There are no products available at the moment.");
+        showAllBtnContainer.classList = 'show-all-btn hidden'
+    }
+
 });
